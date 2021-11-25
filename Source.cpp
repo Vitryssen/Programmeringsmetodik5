@@ -13,12 +13,12 @@
 int main() {
 	srand(time(NULL));
 	GPU gpus[] = {
-		GPU("GTX3090",rand()),
-		GPU("GTX3080",rand()),
-		GPU("GTX3070",rand()),
-		GPU("GTX3060",rand()),
-		GPU("GTX3050",rand()),
-		GPU("GTX3050",rand())
+		GPU("RTX3090",rand()),
+		GPU("RTX3080",rand()),
+		GPU("RTX3070",rand()),
+		GPU("RTX3060",rand()),
+		GPU("RTX3050",rand()),
+		GPU("RTX3050",rand())
 	};
 	int arrSize = sizeof(gpus) / sizeof(gpus[0]);
 	std::vector<GPU> gpuVector(gpus, gpus + arrSize);
@@ -31,7 +31,7 @@ int main() {
 	MyPrint()(*(std::find_if(gpuVector.begin(), gpuVector.end(), Greater(price))));
 	//#3
 	auto adj = std::adjacent_find(gpuVector.begin(), gpuVector.end());
-	std::cout << "\nAdjecent gpus:\n";
+	std::cout << "\nFirst adjecent GPU:\n";
 	if (adj != gpuVector.end())
 		MyPrint()(*adj);
 	//#4
